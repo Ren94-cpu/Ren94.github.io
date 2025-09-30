@@ -3,14 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BU Saber Auto Parts | Reliable Auto Repairs & Maintenance</title>
+    <title>Bu Saber Auto Parts | Reliable Auto Repairs & Maintenance in Bahrain</title>
     <meta name="description" content="Professional auto repair services with honest pricing. Oil changes, brake repair, diagnostics, and more. Serving Bahrain since 1999.">
-    <meta name="keywords" content="auto repair, mechanic, car service, brake repair, oil change, diagnostics, Bahrain, Isa Town">
+    <meta name="keywords" content="auto repair, mechanic, car service, brake repair, oil change, diagnostics, Bahrain, Isa Town, auto parts, car maintenance">
+    
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "Bu Saber Auto Parts",
+      "description": "Professional auto repair services with honest pricing. Serving Bahrain since 1999.",
+      "url": "https://busaberbahrain.com",
+      "telephone": "+973-1778-0934",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shop No.29, Bldg No.5531, Road 1244 Block No.812",
+        "addressLocality": "Isa Town",
+        "addressCountry": "BH",
+        "postalCode": "815"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "26.171332532518324",
+        "longitude": "50.54663798598329"
+      },
+      "openingHours": [
+        "Mo-Fr 08:00-18:00",
+        "Sa 09:00-16:00"
+      ],
+      "areaServed": "Bahrain",
+      "foundingDate": "1999"
+    }
+    </script>
     
     <!-- Preload critical resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload critical images -->
+    <link rel="preload" href="Pictures/HeroPage/CarWithSpareParts.jpg" as="image">
+    <link rel="preload" href="Pictures/Logo/IMG-20250727-WA0000.jpg" as="image" fetchpriority="high">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
@@ -26,21 +60,24 @@
 </head>
 <body>
     <!-- Loading Animation -->
-    <div class="loader" id="loader">
+    <div class="loader" id="loader" aria-live="polite" aria-label="Page loading">
         <div class="loader-spinner"></div>
     </div>
 
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
-    <header>
+    <header role="banner">
         <div class="container header-container">
             <div class="logo">
-                <img src="Pictures/Logo/IMG-20250727-WA0000.jpg" alt="BU Saber Auto Parts Logo" class="logo-img">
-                <div class="logo-text">BU Saber Auto Parts</div>
+                <img src="Pictures/Logo/IMG-20250727-WA0000.jpg" alt="Bu Saber Auto Parts Logo" class="logo-img" width="60" height="60" fetchpriority="high">
+                <div class="logo-text">Bu Saber Auto Parts</div>
             </div>
             
-            <nav>
+            <nav role="navigation" aria-label="Main navigation">
                 <ul id="nav-menu">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#home" class="nav-link active" aria-current="page">Home</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
                     <li><a href="#about" class="nav-link">About Us</a></li>
                     <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
@@ -48,14 +85,14 @@
                 </ul>
             </nav>
             
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
     </header>
     
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" role="banner">
         <div class="hero-content">
             <h1>Reliable Repairs. Honest Service.</h1>
             <p>Your trusted auto repair specialists serving Bahrain since 1999. We provide top-quality service with a commitment to honesty and customer satisfaction.</p>
@@ -64,312 +101,363 @@
                 <a href="#services" class="btn btn-outline">Our Services</a>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" role="button" tabindex="0" aria-label="Scroll down to services">
             <span>Scroll down</span>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
         </div>
     </section>
-    
-    <!-- Services Section -->
-<section class="section services" id="services">
-    <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-oil-can"></i>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Services Section -->
+        <section class="section services" id="services" aria-labelledby="services-heading">
+            <div class="container">
+                <h2 class="section-title" id="services-heading">Our Services</h2>
+                <div class="services-grid">
+                    
+                    <div class="service-card" role="article" aria-label="Oil Change Service">
+                        <div class="service-card-inner">
+                            <div class="service-card-front">
+                                <div class="service-icon">
+                                    <i class="fas fa-oil-can" aria-hidden="true"></i>
+                                </div>
+                                <h3>Oil Changes</h3>
+                                <p>Keep your engine running smoothly with our premium oil change service. We use high-quality oils and filters for optimal performance.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <img src="Pictures/Sections/OilChange.jpg" alt="Professional oil change service" loading="lazy" width="400" height="300">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" role="article" aria-label="A/C Repair Service">
+                        <div class="service-card-inner">
+                            <div class="service-card-front">
+                                <div class="service-icon">
+                                    <i class="fas fa-wind" aria-hidden="true"></i>
+                                </div>
+                                <h3>A/C Repair</h3>
+                                <p>Professional A/C system diagnosis and repair. Stay cool with our comprehensive air conditioning services and refrigerant recharge.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <img src="Pictures/Sections/AC.jpg" alt="Professional A/C repair service" loading="lazy" width="400" height="300">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card" role="article" aria-label="Electrical Repair Service">
+                        <div class="service-card-inner">
+                            <div class="service-card-front">
+                                <div class="service-icon">
+                                    <i class="fas fa-bolt" aria-hidden="true"></i>
+                                </div>
+                                <h3>Electrical Repair</h3>
+                                <p>Complete electrical system diagnostics and repairs. We handle everything from wiring issues to computer system problems.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <img src="Pictures/Sections/ElectricRepair.jpg" alt="Professional Electrical Repair" loading="lazy" width="400" height="300">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card" role="article" aria-label="Vehicle Diagnostics Service">
+                        <div class="service-card-inner">
+                            <div class="service-card-front">
+                                <div class="service-icon">
+                                    <i class="fas fa-tools" aria-hidden="true"></i>
+                                </div>
+                                <h3>Diagnostics</h3>
+                                <p>State-of-the-art diagnostic equipment to quickly identify and solve your vehicle's problems with precision and accuracy.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <img src="Pictures/Sections/Diagnostics.jpg" alt="Professional Vehicle Diagnostics" loading="lazy" width="400" height="300">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card" role="article" aria-label="Parts Replacement Service">
+                        <div class="service-card-inner">
+                            <div class="service-card-front">
+                                <div class="service-icon">
+                                    <i class="fas fa-cogs" aria-hidden="true"></i>
+                                </div>
+                                <h3>Parts Replacement</h3>
+                                <p>Professional replacement of worn-out parts using quality components. We ensure proper installation and optimal performance.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <img src="Pictures/Sections/PartsReplacement.jpg" alt="Professional Parts Replacement" loading="lazy" width="400" height="300">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card" role="article" aria-label="Engine Repair Service">
+                        <div class="service-card-inner">
+                            <div class="service-card-front">
+                                <div class="service-icon">
+                                    <i class="fas fa-car-alt" aria-hidden="true"></i>
+                                </div>
+                                <h3>Engine Repair</h3>
+                                <p>From minor tune-ups to major overhauls, our certified technicians can handle all your engine needs with expertise.</p>
+                            </div>
+                            <div class="service-card-back">
+                                <img src="Pictures/Sections/CarEngine.jpg" alt="Professional Engine Repair" loading="lazy" width="400" height="300">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3>Oil Changes</h3>
-                <p>Keep your engine running smoothly with our premium oil change service. We use high-quality oils and filters for optimal performance.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-wind"></i>
+                
+                <div class="spare-parts-notice">
+                    <div class="spare-parts-content">
+                        <div>
+                            <div class="spare-parts-text">
+                                <h3>Quality Spare Parts Available</h3>
+                                <p>We stock a wide range of genuine and high-quality spare parts for all major car brands. Visit our shop for all your auto parts needs!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3>A/C Repair</h3>
-                <p>Professional A/C system diagnosis and repair. Stay cool with our comprehensive air conditioning services and refrigerant recharge.</p>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-bolt"></i>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about" id="about" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 class="section-title" id="about-heading">About Us</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Your Trusted Auto Repair Specialists</h2>
+                        <p>For over 25 years, Bu Saber Auto Parts has been the go-to destination for reliable car repairs and quality auto parts in Bahrain. What started as a small garage in 1999 has grown into a full-service shop, thanks to our commitment to honest service, skilled craftsmanship, and fair pricing.</p>
+                        <p>Our team of technicians brings years of experience and a passion for cars to every job. We believe in honest service, fair pricing, and building long-term relationships with our customers.</p>
+                        
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h4>Quality Workmanship</h4>
+                                    <p>We use only the highest quality parts and stand behind all our work with industry-leading warranties.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hand-holding-usd" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h4>Honest Pricing</h4>
+                                    <p>No hidden fees or unnecessary repairs. We provide transparent pricing and honest recommendations.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h4>Quick Turnaround</h4>
+                                    <p>We know your time is valuable. Most repairs are completed same-day with our efficient service.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-img">
+                        <img src="Pictures/HeroPage/CarWithOpenBoot.jpg" alt="Our Team at Bu Saber Auto Parts" loading="lazy" width="600" height="400">
+                    </div>
                 </div>
-                <h3>Electrical Repair</h3>
-                <p>Complete electrical system diagnostics and repairs. We handle everything from wiring issues to computer system problems.</p>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <h3>Diagnostics</h3>
-                <p>State-of-the-art diagnostic equipment to quickly identify and solve your vehicle's problems with precision and accuracy.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <h3>Parts Replacement</h3>
-                <p>Professional replacement of worn-out parts using quality components. We ensure proper installation and optimal performance.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-engine"></i>
-                </div>
-                <h3>Engine Repair</h3>
-                <p>From minor tune-ups to major overhauls, our certified technicians can handle all your engine needs with expertise.</p>
-            </div>
-        </div>
+        </section>
         
-        <!-- Add this spare parts notice -->
-        <div class="spare-parts-notice">
-            <div class="spare-parts-content">
-                <i class="fas fa-cogs"></i>
-                <div>
-                    <div class="spare-parts-text">
-                    <h3>Quality Spare Parts Available</h3>
-                    <p>We stock a wide range of genuine and high-quality spare parts for all major car brands. Visit our shop for all your auto parts needs!</p>
+        <!-- Testimonials Section -->
+        <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <h2 class="section-title" id="testimonials-heading">What Our Customers Say</h2>
+                <div class="testimonial-slider" role="region" aria-roledescription="carousel" aria-label="Customer testimonials">
+                    <div class="testimonial-slide active" role="group" aria-roledescription="slide" aria-label="1 of 5">
+                        <div class="testimonial-content">
+                            <p>"Excellent service and very reasonable prices. The team at Bu Saber fixed my car's electrical issue quickly and professionally. Highly recommended for anyone looking for honest auto repair in Bahrain!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <div class="author-name">Mohammed A.</div>
+                            <div class="author-rating">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <span class="sr-only">5 out of 5 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
+                        <div class="testimonial-content">
+                            <p>"I've been coming to Bu Saber for over 10 years. Their honesty and expertise keep me coming back. They never recommend unnecessary repairs and always explain everything clearly. Trustworthy service!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <div class="author-name">Ahmed R.</div>
+                            <div class="author-rating">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <span class="sr-only">5 out of 5 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
+                        <div class="testimonial-content">
+                            <p>"Fast and reliable service! They fixed my brake problem the same day I brought my car in. The staff is friendly and the prices are very reasonable compared to other shops in Bahrain."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <div class="author-name">Fatima K.</div>
+                            <div class="author-rating">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <span class="sr-only">5 out of 5 stars</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+                        <div class="testimonial-content">
+                            <p>"Professional team with excellent knowledge. They diagnosed my engine issue accurately and fixed it at a fair price. Will definitely return for all my car maintenance needs."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <div class="author-name">Hassan M.</div>
+                            <div class="author-rating">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <span class="sr-only">5 out of 5 stars</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+                        <div class="testimonial-content">
+                            <p>"Best auto parts and service in Isa Town! They have genuine parts and their mechanics are skilled. My car has never run better since I started coming here."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <div class="author-name">Nadia S.</div>
+                            <div class="author-rating">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <span class="sr-only">5 out of 5 stars</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prev-btn" aria-label="Previous testimonial">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <div class="slider-dots" id="slider-dots" role="tablist" aria-label="Testimonial navigation"></div>
+                    <button class="slider-btn" id="next-btn" aria-label="Next testimonial">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                
+                <div class="text-center" style="margin-top: 3rem;">
+                    <a href="https://www.google.com/search?q=BU+SABER+AUTO+PARTS+W.L.L+Reviews" class="btn" target="_blank" rel="noopener noreferrer">Leave a Review</a>
+                </div>
             </div>
-        </div>
-    </div>
-    
-</div>
-</section>
-    
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Your Trusted Auto Repair Specialists</h2>
-                    <p>For over 25 years, BU Saber Auto Parts has been the go-to destination for reliable car repairs and quality auto parts in Bahrain. What started as a small garage in 1999 has grown into a full-service shop, thanks to our commitment to honest service, skilled craftsmanship, and fair pricing.</p>
-                    <p>Our team of technicians brings years of experience and a passion for cars to every job. We believe in honest service, fair pricing, and building long-term relationships with our customers.</p>
-                    
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-shield-alt"></i>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="section contact" id="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 class="section-title" id="contact-heading">Contact Us</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                             </div>
-                            <div>
-                                <h4>Quality Workmanship</h4>
-                                <p>We use only the highest quality parts and stand behind all our work with industry-leading warranties.</p>
+                            <div class="contact-details">
+                                <h3>Location</h3>
+                                <address>
+                                    Shop No.29, Bldg No.5531<br>
+                                    Road 1244 Block No.812<br>
+                                    Isa Town, 815 Bahrain
+                                </address>
                             </div>
                         </div>
                         
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-hand-holding-usd"></i>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
                             </div>
-                            <div>
-                                <h4>Honest Pricing</h4>
-                                <p>No hidden fees or unnecessary repairs. We provide transparent pricing and honest recommendations.</p>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <p><a href="tel:+97317780934">+973 1778 0934</a></p>
                             </div>
                         </div>
                         
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-clock"></i>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
                             </div>
-                            <div>
-                                <h4>Quick Turnaround</h4>
-                                <p>We know your time is valuable. Most repairs are completed same-day with our efficient service.</p>
+                            <div class="contact-details">
+                                <h3>Hours</h3>
+                                <p>Monday - Friday: 8am - 6pm<br>
+                                Saturday: 9am - 4pm<br>
+                                Sunday: Closed</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-img">
-                    <img src="Pictures/HeroPage/CarWithOpenBoot.jpg" alt="Our Team at BU Saber Auto Parts" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Testimonials Section -->
-    <section class="section testimonials" id="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial-slide active">
-                    <div class="testimonial-content">
-                        <p>"Excellent service and very reasonable prices. The team at BU Saber fixed my car's electrical issue quickly and professionally. Highly recommended for anyone looking for honest auto repair in Bahrain!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-name">Mohammed A.</div>
-                        <div class="author-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <p>"I've been coming to BU Saber for over 10 years. Their honesty and expertise keep me coming back. They never recommend unnecessary repairs and always explain everything clearly. Trustworthy service!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-name">Ahmed R.</div>
-                        <div class="author-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <p>"Fast and reliable service! They fixed my brake problem the same day I brought my car in. The staff is friendly and the prices are very reasonable compared to other shops in Bahrain."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-name">Fatima K.</div>
-                        <div class="author-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <p>"Professional team with excellent knowledge. They diagnosed my engine issue accurately and fixed it at a fair price. Will definitely return for all my car maintenance needs."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-name">Hassan M.</div>
-                        <div class="author-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <p>"Best auto parts and service in Isa Town! They have genuine parts and their mechanics are skilled. My car has never run better since I started coming here."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-name">Nadia S.</div>
-                        <div class="author-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="slider-controls">
-                <button class="slider-btn" id="prev-btn" aria-label="Previous testimonial">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="slider-dots" id="slider-dots"></div>
-                <button class="slider-btn" id="next-btn" aria-label="Next testimonial">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-            
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="https://www.google.com/search?q=BU+SABER+AUTO+PARTS+W.L.L+Reviews" class="btn" target="_blank" rel="noopener">Leave a Review</a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Location</h3>
-                            <p>Shop No.29, Bldg No.5531<br>Road 1244 Block No.812<br>Isa Town, 815 Bahrain</p>
                         </div>
                     </div>
                     
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <p><a href="tel:+97317780934">+973 1778 0934</a></p>
-                        </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.7787992487415!2d50.54663798598329!3d26.171332532518324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49af5e3c3b85bd%3A0x5b16c42f273ec770!2sBU%20SABER%20AUTO%20PARTS%20W.L.L!5e0!3m2!1sen!2sca!4v1759095381311!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="BU Saber Auto Parts Location"></iframe>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Hours</h3>
-                            <p>Monday - Friday: 8am - 6pm<br>
-                            Saturday: 9am - 4pm<br>
-                            Sunday: Closed</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.7787992487415!2d50.54663798598329!3d26.171332532518324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49af5e3c3b85bd%3A0x5b16c42f273ec770!2sBU%20SABER%20AUTO%20PARTS%20W.L.L!5e0!3m2!1sen!2sca!4v1759095381311!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="BU Saber Auto Parts Location"></iframe>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
     
     <!-- Call Now Button (Mobile) -->
     <a href="tel:+97317780934" class="call-now-btn" aria-label="Call Now">
-        <i class="fas fa-phone"></i>
+        <i class="fas fa-phone" aria-hidden="true"></i>
     </a>
 
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
-        <i class="fas fa-chevron-up"></i>
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
     
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3>BU Saber Auto Parts</h3>
+                    <h3>Bu Saber Auto Parts</h3>
                     <p>Your trusted auto repair specialists providing quality service with honesty and integrity since 1999.</p>
                 </div>
                 
@@ -400,19 +488,23 @@
                     <h3>Contact Info</h3>
                     <div class="footer-contact-item">
                         <div class="footer-contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         </div>
-                        <p>Shop No.29, Bldg No.5531<br>Road 1244 Block No.812<br>Isa Town, Bahrain</p>
+                        <address>
+                            Shop No.29, Bldg No.5531<br>
+                            Road 1244 Block No.812<br>
+                            Isa Town, Bahrain
+                        </address>
                     </div>
                     <div class="footer-contact-item">
                         <div class="footer-contact-icon">
-                            <i class="fas fa-phone-alt"></i>
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
                         </div>
                         <p><a href="tel:+97317780934">+973 1778 0934</a></p>
                     </div>
                     <div class="footer-contact-item">
                         <div class="footer-contact-icon">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
                         </div>
                         <p>Mon-Fri: 8am-6pm<br>Sat: 9am-4pm<br>Sun: Closed</p>
                     </div>
@@ -420,12 +512,12 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> BU Saber Auto Parts. All Rights Reserved.</p>
+                <p>&copy; <span id="current-year"></span> Bu Saber Auto Parts. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
     
     <!-- External JavaScript -->
-    <script src="index.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
