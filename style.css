@@ -584,19 +584,7 @@ nav ul li {
     z-index: 1;
 }
 
-.spare-parts-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: var(--light);
-    box-shadow: 0 4px 15px rgba(21, 96, 139, 0.3);
-    transition: var(--transition);
-}
+
 
 .spare-parts-notice:hover .spare-parts-icon {
     transform: scale(1.1) rotate(5deg);
@@ -1058,6 +1046,125 @@ footer {
     border-color: var(--primary) transparent var(--primary) transparent;
     animation: loader 1.2s linear infinite;
 }
+
+/* Location Tabs Styles */
+.locations-container {
+    margin-top: 2rem;
+}
+
+.location-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e2e8f0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.location-tab {
+    background: none;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gray);
+    cursor: pointer;
+    transition: var(--transition);
+    border-bottom: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 8px 8px 0 0;
+}
+
+.location-tab:hover,
+.location-tab:focus {
+    color: var(--primary);
+    background-color: rgba(21, 96, 139, 0.05);
+}
+
+.location-tab.active {
+    color: var(--primary);
+    border-bottom-color: var(--accent);
+    background-color: rgba(21, 96, 139, 0.1);
+}
+
+.location-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.location-content.active {
+    display: block;
+}
+
+.location-actions {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.location-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+
+
+
+/* Branch Info Cards */
+
+
+.branch-info h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+
+/* Responsive Location Tabs */
+@media (max-width: 768px) {
+    .location-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .location-tab {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        border-radius: 8px;
+        border-bottom: 3px solid transparent;
+    }
+    
+    .location-tab.active {
+        border-bottom-color: var(--accent);
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .location-tab {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .branch-info {
+        padding: 1.5rem;
+    }
+}
+
 
 @keyframes loader {
     0% { transform: rotate(0deg); }
