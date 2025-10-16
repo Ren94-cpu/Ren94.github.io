@@ -121,8 +121,8 @@ function initMobileMenu() {
 
     if (!mobileMenuBtn || !navMenu) return;
 
-    // Add click event listener to mobile menu button
-    mobileMenuBtn.addEventListener('click', () => {
+    // Enhanced click handler with better event handling
+    function toggleMobileMenu() {
         const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
         
         // Toggle the 'active' class on the navigation menu
@@ -132,20 +132,40 @@ function initMobileMenu() {
         mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
         
         // Change the icon based on menu state
-        mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
-            ? '<i class="fas fa-times" aria-hidden="true"></i>'  // Show close icon when menu is open
-            : '<i class="fas fa-bars" aria-hidden="true"></i>';  // Show hamburger icon when menu is closed
+        const icon = mobileMenuBtn.querySelector('i');
+        if (icon) {
+            icon.className = navMenu.classList.contains('active') 
+                ? 'fas fa-times'  // Show close icon when menu is open
+                : 'fas fa-bars';  // Show hamburger icon when menu is closed
+        }
         
         // Prevent body scroll when menu is open
         document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-    });
+    }
+
+    // Add multiple event listeners for better touch support
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    mobileMenuBtn.addEventListener('touchstart', function(e) {
+        e.preventDefault(); // Prevent double-tap zoom on mobile
+        toggleMobileMenu();
+    }, { passive: false });
 
     // Close mobile menu when clicking a navigation link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) icon.className = 'fas fa-bars';
+            document.body.style.overflow = '';
+        });
+        
+        // Add touch support for links
+        link.addEventListener('touchstart', () => {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) icon.className = 'fas fa-bars';
             document.body.style.overflow = '';
         });
     });
@@ -156,9 +176,22 @@ function initMobileMenu() {
             !navMenu.contains(e.target) && 
             !mobileMenuBtn.contains(e.target)) {
             navMenu.classList.remove('active');
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) icon.className = 'fas fa-bars';
             document.body.style.overflow = '';
+        }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) icon.className = 'fas fa-bars';
+            document.body.style.overflow = '';
+            mobileMenuBtn.focus();
         }
     });
 }

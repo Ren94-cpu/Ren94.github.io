@@ -286,8 +286,15 @@ nav ul li {
     transition: var(--transition);
     margin-left: auto; 
     margin-right: 1rem;
-    padding: 0.5rem;
+    padding: 0.8rem;
     border-radius: 4px;
+    min-width: 44px; 
+    min-height: 44px; 
+    
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+    z-index: 1001;
 }
 
 .mobile-menu-btn:hover,
@@ -1213,7 +1220,7 @@ footer {
         align-items: center;
         justify-content: center;
         transition: var(--transition);
-        z-index: 999;
+        z-index: 1000;
     }
     
     nav ul.active {
@@ -1229,9 +1236,9 @@ footer {
     }
     
     .mobile-menu-btn {
-        display: block;
+        display: flex !important;
         margin-left: 0; 
-        margin-right: 0.9rem; 
+        margin-right: 1rem; 
         order: 2;
     }
     
@@ -1270,6 +1277,9 @@ footer {
     .mobile-menu-btn {
         margin-right: 0.25rem;
         font-size: 1.4rem;
+        padding: 0.7rem; 
+        min-width: 40px;
+        min-height: 40px;
     }
     
     .section {
