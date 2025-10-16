@@ -152,21 +152,29 @@ function initMobileMenu() {
 
     // Close mobile menu when clicking a navigation link
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            // Close the mobile menu first
             navMenu.classList.remove('active');
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
             const icon = mobileMenuBtn.querySelector('i');
             if (icon) icon.className = 'fas fa-bars';
             document.body.style.overflow = '';
-        });
-        
-        // Add touch support for links
-        link.addEventListener('touchstart', () => {
-            navMenu.classList.remove('active');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (icon) icon.className = 'fas fa-bars';
-            document.body.style.overflow = '';
+            
+            // Get the target section
+            const targetId = link.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                const targetSection = utils.$(targetId);
+                if (targetSection) {
+                    // Wait a bit for the menu to close, then scroll to section
+                    setTimeout(() => {
+                        const targetPosition = targetSection.offsetTop - CONFIG.scrollOffset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }, 300); // 300ms delay for menu animation to complete
+                }
+            }
         });
     });
 
